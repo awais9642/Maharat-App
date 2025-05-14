@@ -9,7 +9,7 @@ export default function SplashScreen() {
         alignItems: "center",
       }}
     >
-      <Text>Splash screen.</Text>
+      <Text>Splash Screen.</Text>
     </View>
   );
 }
