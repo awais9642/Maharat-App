@@ -23,12 +23,13 @@ export default function Index() {
     <View style={styles.container}>
         <Onboarding
         onDone={handleDone}
-        onSkip={handleDone}
-         DoneButtonComponent={Done}
-        containerStyles={{paddingHorizontal:20}}
-        imageContainerStyles={styles.imageContainer}
-        titleStyles={styles.title}
-        subTitleStyles={styles.subtitle}
+  onSkip={handleDone}
+  DoneButtonComponent={Done}
+  containerStyles={{ paddingHorizontal: 20 }}
+  bottomBarHeight={70} // Increase this if needed
+  imageContainerStyles={styles.imageContainer}
+  titleStyles={styles.title}
+  subTitleStyles={styles.subtitle}
           pages={[
             {
               backgroundColor: '#F6F7FF',
@@ -82,31 +83,33 @@ export default function Index() {
   );
 }
 const styles = StyleSheet.create({
-  container:{
-     flex: 1,
-    
-  
+  container: {
+    flex: 1,
   },
-    imageContainer: {
-    justifyContent: 'center',
+  imageContainer: {
+    justifyContent: 'flex-start', // don't take full vertical space
     alignItems: 'center',
     paddingBottom: 0,
+    marginTop: 100, // adjust this to center image vertically
+     borderRadius: 20, 
   },
-  image:{
-    width:1000,
-    height:1000,
+  image: {
+    width: 250,
+    height: 250,
+     borderRadius: 20, 
   },
-   title: {
+  title: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginTop: 10,
+    marginTop: 250, // spacing between image and title
     textAlign: 'center',
+
   },
   subtitle: {
     fontSize: 16,
     color: '#555',
     textAlign: 'center',
     paddingHorizontal: 20,
+    marginTop: 10,
   },
-  
-})
+});
